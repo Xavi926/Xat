@@ -14,12 +14,13 @@ namespace XatClient
 			if (client.ConnectToServer())
 			{
                 string frase = "";
-				while (true)
-				{
-                    Console.WriteLine("T'has connectat al servidor");
+                while (frase != "exit")
+                {
+                    Console.WriteLine("T'has connectat al servidor (per sortir 'exit')");
                     frase = Console.ReadLine();
-                    client.WriteLine(frase);
-				}
+                    if (frase != "exit")
+                        client.WriteLine(frase);
+                }
 			}
 		}
 	}
